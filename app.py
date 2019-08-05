@@ -31,6 +31,19 @@ def articles():
         return render_template('articles.html', msg=msg)
     # Close connection
     cur.close()
+#Single Article
+@app.route('/article/<string:id>/')
+def article(id):
+    # Create cursor
+    cur = mysql.connection.cursor()
+
+    # Get article
+    result = cur.execute("SELECT * FROM articles WHERE id = %s", [id])
+
+    article = cur.fetchone()
+
+    return render_template('article.html', article=article)
+
 
 
 
