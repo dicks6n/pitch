@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf%}
+
+{%block content%}
+    <div class="container">
+        <div class="row">
+        <div class="col-md-4">
+        <h3>Product Pitch</h3>
+            <ul class="list-group" >
+                {%for pitch in pitches%}
+                {%if pitch.category=='PRODUCT'%}
+                <li style="border:1px solid black;padding:10px;border-radius:5px;margin:10px;"><a href="/pitches/{{pitch.id}}" style="color:black;">{{pitch.pitchname}}</a></li>
+                {%endif%}
+                {%endfor%}
+            </ul>
+            </div>
+
+         <div class="col-md-4">
+        <h3>Interview Pitch</h3>
+            <ul class="list-group ">
+                {%for pitch in pitches%}
+                {%if pitch.category=='INTERVIEW'%}
+                <li style="border:1px solid black;padding:10px;border-radius:5px;margin:10px;"><a href="/pitches/{{pitch.id}}" style="color:black;">{{pitch.pitchname}}</a></li>
+                {%endif%}
+                {%endfor%}
+            </ul>
+         </div>
+         <div class="col-md-4">
+        <h3>Promotion Pitch</h3>
+            <ul class="list-group">
+                {%for pitch in pitches%}
+                {%if pitch.category=='PROMOTION'%}
+                <li style="border:1px solid black;padding:10px;border-radius:5px;margin:10px;" ><a href="/pitches/{{pitch.id}}" style="color:black;">{{pitch.pitchname}}</a></li>
+                {%endif%}
+                {%endfor%}
+            </ul>
+         </div>
+
+      {% if current_user.is_authenticated %} 
+      <h3>New pitch</h3>
+      {{wtf.quick_form(pitch_form)}}  
+      {% else %}
+      <h4>You dont have an account</h4>
+      {% endif %}   
+    
+{%endblock%}
+</div>
+</div>
+            

@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+{% import 'bootstrap/wtf.html' as wtf%}
+{% block content %}
+<div class="container">
+  <div class= 'pitch' style="border:1px solid;padding:10px;border-radius:5px;margin:10px;">
+    <h3>{{pitch.category}}</h3>
+    <p>{{pitch.pitchname}}</p><br>
+    {{pitch.posted}}<br>
+  </div><br><br>
+  <h4>Comments</h4>
+    {% for item in comment %}
+<div style="border:1px solid black;padding:10px;border-radius:5px;margin:10px;">{{item.comment_title}}</div>
+  {%endfor%}
+<br><br>
+
+    
+    {{ wtf.quick_form(comment_form)}}
+            {{simplemde.load}}
+<br>
+
+  </div>
+{% endblock %}
