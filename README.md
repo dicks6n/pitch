@@ -1,6 +1,8 @@
-###_ DICKSON MACHARIA
-# pitch
-This is an online news platform where a user can write his own pitches, read pitches from other users, vote for and review pitches as well as maintain their own profiles 
+# One Minute Pitch
+#### This is an online news platform where a user can write his own pitches, read pitches from other users, vote for and review pitches as well as maintain their own profiles, 2019.
+
+##  DICKSON MACHARIA
+ 
 ## BDD
 | Behavior- Our program should handle: | Input Example- When it receives: | Output Example- It should return: |
 | :----------------------------------: | :------------------------------: | :-------------------------------: |
